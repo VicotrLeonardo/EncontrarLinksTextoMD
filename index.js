@@ -12,7 +12,6 @@ async function capturarArquivo(caminhoArquivo) {
   try {
     const texto = await fs.promises.readFile(caminhoArquivo, encoding);
     console.log(chalk.yellow(texto));
-
     console.log(extraiLinks(texto));
   } catch (error) {
     tratarErro(error);
@@ -46,3 +45,5 @@ function extraiLinks(texto) {
 }
 
 capturarArquivo("./utils/arquivos/texto1.md");
+
+module.exports = capturarArquivo;
